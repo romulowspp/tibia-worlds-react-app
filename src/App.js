@@ -4,6 +4,13 @@ import "./styles.css";
 
 import Header from "./components/header";
 import Main from "./pages/main";
+import WorldInfo from "./pages/world-info"
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 const App = () => (
   <div className="App">
@@ -12,7 +19,12 @@ const App = () => (
       <title>Tibia Worlds - A simple react app</title>
     </Helmet>
     <Header />
-    <Main />
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route path="/world/:name" component={WorldInfo} />
+      </Switch>
+    </Router>
   </div>
 );
 

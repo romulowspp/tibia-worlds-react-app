@@ -3,6 +3,8 @@ import api from "../../services/api";
 
 import "./styles.css";
 
+import { Link } from "react-router-dom";
+
 export default class Main extends Component {
   state = {
     worlds: [],
@@ -32,6 +34,9 @@ export default class Main extends Component {
             </p>
             <p>
               <strong>Location:</strong> {world.location}
+            </p>
+            <p>
+              <Link to={`/world/${world.name}`}>View</Link>
             </p>
           </article>
         ))}
