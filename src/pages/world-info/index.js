@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import api from "../../services/api";
 
-import { useParams } from "react-router-dom";
-
 import "./styles.css";
 
 export default class WorldInfo extends Component {
@@ -34,7 +32,7 @@ export default class WorldInfo extends Component {
               {worldInfo.name} ({worldInfo.pvp_type})
             </strong>
             <p>
-              {worldInfo.world_quest_titles}
+              World titles: {worldInfo.world_quest_titles?.map(titles => titles + " ")} 
             </p>
           </article>
       </div>
